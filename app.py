@@ -29,7 +29,7 @@ def transform(input: str, history: list[mel.ChatMessage]):
     messages = [{"role": "user", "content": message.content} for message in history]
     messages.append({"role": "user", "content": input})
 
-    stream = ollama.chat(model='deepseek-r1:8b', messages=messages, stream=True)
+    stream = ollama.chat(model='llama3.1:8b', messages=messages, stream=True)
 
     for chunk in stream:
         content = chunk.get('message', {}).get('content', '')
