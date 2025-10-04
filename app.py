@@ -95,8 +95,8 @@ def page():
                             background="#333" if msg.role == "user" else "#444",
                             box_shadow="0 2px 4px rgba(0,0,0,0.1)"
                         )):
-                            me.text(f"**{msg.role.capitalize()}**", style=me.Style(font_weight="bold"))
-                            me.text(msg.content)
+                            me.markdown(f"**{msg.role.capitalize()}**")
+                            me.markdown(msg.content)
 
             # Chat input area
             with me.box(style=me.Style(padding=me.Padding.all(20), border=me.Border(top=me.BorderSide(width=1, style="solid", color="#333")))):
